@@ -24,7 +24,7 @@
         "@typescript-eslint/no-empty-interface": "off",
         "indent": [
             "error",
-            4
+            2
         ],
         "linebreak-style": [
             "error",
