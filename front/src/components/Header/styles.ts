@@ -1,6 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import styled from 'styled-components'
-import { X } from '@phosphor-icons/react'
 
 export const Container = styled.header`
   background-color: ${(props) => props.theme['blue-900']};
@@ -18,12 +17,22 @@ export const Overlay = styled(Dialog.Overlay)`
   background-color: rgba(0, 0, 0, 0.75);
 `
 
-export const ButtonCloseModal = styled(X)`
+export const ButtonCloseModal = styled(Dialog.Close)`
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
+  line-height: 0;
+  width: 1.5rem;
+  height: 1.5rem;
   background: transparent;
+  border: none;
   cursor: pointer;
+  transition: 0.4s;
+  color: ${(props) => props.theme['gray-100']};
+
+  &:hover{
+    color: ${(props) => props.theme['gray-900']};
+  }
 `
 
 export const Content = styled(Dialog.Content)`
@@ -43,7 +52,7 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 
   form{
     margin-top: 1.5rem;
@@ -59,9 +68,9 @@ export const ContentContainer = styled.div`
     padding: 0.8rem;
     width: 18.375rem;
     border-radius: 6px;
-    color: ${(props) => props.theme['blue-900']};
+    color: ${(props) => props.theme['blue-600']};
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
   }
 
@@ -86,7 +95,7 @@ export const InputPassword = styled.div`
     height: 3.375rem;
     border: none;
     padding: 0.8rem;
-    border-radius: 6px;
+    border-radius: 6px 0px 0px 6px;
     background-color: ${(props) => props.theme['gray-100']};
     color: ${(props) => props.theme['blue-900']};
     letter-spacing: 1rem;
@@ -123,7 +132,6 @@ export const LogInContainer = styled.div`
   display: flex;
   align-items: end;
   justify-content: center;
-  gap: 0.3rem;
 
   > div {
     display: flex;
@@ -138,9 +146,10 @@ export const LogInContainer = styled.div`
       height: 3.375rem;
       width: 3.375rem;
       line-height: 0;
-      border: 0;
-      background: none;
-      color: ${(props) => props.theme['gray-200']};
+      border: none;
+      border-radius: 0px 6px 6px 0px;
+      background: ${(props) => props.theme['orange-200']};
+      color: ${(props) => props.theme['blue-200']};
       transition: 0.4s;
 
     svg{
@@ -150,15 +159,23 @@ export const LogInContainer = styled.div`
   }
 
   button[type='submit']:hover{
-    color: ${(props) => props.theme['green-300']};
+    color: ${(props) => props.theme['blue-900']};
+    background: ${(props) => props.theme['orange-400']};
   }
 `
 
-// export const DividerContainer = styled.div`
-//   border: 1px solid black;
-//   flex-direction: column;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `
+export const DividerContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
 
+  hr{
+    flex: 1;
+    border-color: ${(props) => props.theme['gray-100']};
+  }
+
+  span{
+    margin: 0.5rem;
+    line-height: 0;
+  }
+`

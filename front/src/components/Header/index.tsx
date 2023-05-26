@@ -1,9 +1,9 @@
-import { ButtonCloseModal, Container, Content, ContentContainer, InputPassword, LogInContainer, Overlay} from './styles'
+import { ButtonCloseModal, Container, Content, ContentContainer, DividerContainer, InputPassword, LogInContainer, Overlay} from './styles'
 import * as Dialog from '@radix-ui/react-dialog'
 import { useForm } from 'react-hook-form'
 import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { CheckCircle, Eye, EyeClosed } from '@phosphor-icons/react'
+import { CheckCircle, Eye, EyeClosed, X } from '@phosphor-icons/react'
 import { useState } from 'react'
 /*
 TODO
@@ -44,16 +44,16 @@ export function Header(){
           <Content>
             <Dialog.Title>O que deseja?</Dialog.Title>
 
-            <Dialog.Close asChild>
-              <ButtonCloseModal />
-            </Dialog.Close>
+            <ButtonCloseModal asChild>
+              <X />
+            </ButtonCloseModal>
 
             <ContentContainer>
               <form onSubmit={handleSubmit(handleLogin)} action=''>
                 <LogInContainer>
                   <div>
-                    <label >
-                    Entrar na palestra
+                    <label>
+                      Entrar na palestra
                     </label>
                     <InputPassword>
                       <input
@@ -78,7 +78,10 @@ export function Header(){
                 </LogInContainer>
               </form>
 
-              <span>ou</span>
+              <DividerContainer>
+                <hr/><span>ou</span><hr/>
+
+              </DividerContainer>
 
               <button type="button">
                   Criar Nova Palestra
