@@ -20,7 +20,7 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Header />
-      <EventTitle />
+      <EventTitle title='fixed title for while - OK' />
       <GlobalStyle />
     </ThemeProvider>
   )

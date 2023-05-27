@@ -16,7 +16,8 @@ export const Container = styled.div`
   h3{
     font-weight: 700;
     font-size: 1.5rem;
-    line-height: 3.5rem;
+    padding-bottom: 1rem;
+    text-align: center;
     color: ${(props) => props.theme.orange};
   }
 `

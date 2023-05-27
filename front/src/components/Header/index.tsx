@@ -1,4 +1,4 @@
-import { ButtonCloseModal, Container, Content, ContentContainer, DividerContainer, InputPassword, LogInContainer, Overlay} from './styles'
+import { ButtonCloseModal, Container, Content, ContentContainer, DividerContainer, InputPassword, LogInContainer, Overlay } from './styles'
 import * as Dialog from '@radix-ui/react-dialog'
 import { useForm } from 'react-hook-form'
 import * as zod from 'zod'
@@ -19,9 +19,9 @@ type LoginFormData = zod.infer<typeof loginFormDataSchema>
 
 export function Header(){
 
-  const[isPasswordVisible, setPasswordVisible] = useState<boolean>(false)
+  const[isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false)
 
-  const {register, handleSubmit} = useForm<LoginFormData>({
+  const { register, handleSubmit } = useForm<LoginFormData>({
     resolver: zodResolver(loginFormDataSchema)
   })
 
@@ -30,7 +30,7 @@ export function Header(){
   }
 
   function handleChangePasswordVisibity(){
-    setPasswordVisible(currentValue => !currentValue)
+    setIsPasswordVisible(currentValue => !currentValue)
   }
 
   return(
@@ -79,8 +79,9 @@ export function Header(){
               </form>
 
               <DividerContainer>
-                <hr/><span>ou</span><hr/>
-
+                <hr/>
+                <span>ou</span>
+                <hr/>
               </DividerContainer>
 
               <button type="button">
