@@ -29,8 +29,6 @@ export default{
   ]
 } as Meta<IEventTitleProps>
 
-export const Default: StoryObj<IEventTitleProps> = {}
-
 export const ShortTitle: StoryObj<IEventTitleProps> = {
   args: {
     title: 'Convention of 2023',

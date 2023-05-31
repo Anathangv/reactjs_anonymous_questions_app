@@ -1,5 +1,10 @@
 import { Container } from './styles'
 
+/*
+TODO
+ - limit number of characters
+*/
+
 export interface IEventTitleProps{
   title: string
 }

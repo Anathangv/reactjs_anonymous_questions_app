@@ -1,5 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.header`
   background-color: ${(props) => props.theme['blue-900']};
@@ -81,7 +81,11 @@ export const ContentContainer = styled.div`
   }
 `
 
-export const InputPassword = styled.div`
+interface IInputPassword {
+  hasError: boolean
+}
+
+export const InputPassword = styled.div<IInputPassword>`
   position: relative;
   display: flex;
   align-items: center;
@@ -103,6 +107,15 @@ export const InputPassword = styled.div`
     font-size: 1.5rem;
     text-transform: uppercase;
     font-family: monospace;
+
+    ${({ hasError }) =>
+    hasError ?
+      css`background-color: ${(props) => props.theme['red-100']};
+          border: 1px solid ${(props) => props.theme['red-600']}`
+      :
+      css`background-color: ${(props) => props.theme['gray-100']};
+          border: 1px solid ${(props) => props.theme['orange-200']}`
+}
   }
 
   input::placeholder{

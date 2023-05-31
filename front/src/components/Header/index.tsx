@@ -5,13 +5,15 @@ import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { CheckCircle, Eye, EyeClosed, X } from '@phosphor-icons/react'
 import { useState } from 'react'
+import { ModalDefault } from '../ModalDefault'
+import { InputPassword_ } from '../InputPassword'
 /*
 TODO
  - partial border, upper part with orange color
 */
 
 const loginFormDataSchema = zod.object({
-  password: zod.string()
+  password: zod.string().min(6, { message: 'Necessário informar campo com 6 digitos' }).max(6)
 })
 
 type LoginFormData = zod.infer<typeof loginFormDataSchema>
@@ -21,7 +23,7 @@ export function Header(){
 
   const[isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false)
 
-  const { register, handleSubmit } = useForm<LoginFormData>({
+  const { register, handleSubmit, formState } = useForm<LoginFormData>({
     resolver: zodResolver(loginFormDataSchema)
   })
 
@@ -30,67 +32,50 @@ export function Header(){
   }
 
   function handleChangePasswordVisibity(){
+    console.log(isPasswordVisible)
     setIsPasswordVisible(currentValue => !currentValue)
   }
+
+  console.log('formState', formState)
 
   return(
     <Container>
       <h1>this is a header</h1>
 
-      <Dialog.Root open={true}>
-        <Dialog.Portal>
-          <Overlay />
+      <ModalDefault
+        isOpen={true}
+        hasCloseModalOption={false}
+        title='O que deseja?'>
 
-          <Content>
-            <Dialog.Title>O que deseja?</Dialog.Title>
+        <ContentContainer>
+          <form onSubmit={handleSubmit(handleLogin)} action=''>
 
-            <ButtonCloseModal asChild>
-              <X />
-            </ButtonCloseModal>
+            <LogInContainer>
+              <InputPassword_
+                hasError={!!formState.errors.password}
+                isPasswordVisible={isPasswordVisible}
+                label='Entrar'
+                {...register('password')}
+                changePassordVisibity={handleChangePasswordVisibity}
+              />
 
-            <ContentContainer>
-              <form onSubmit={handleSubmit(handleLogin)} action=''>
-                <LogInContainer>
-                  <div>
-                    <label>
-                      Entrar na palestra
-                    </label>
-                    <InputPassword>
-                      <input
-                        type={isPasswordVisible ? 'text' : 'password' }
-                        placeholder='Senha'
-                        required
-                        maxLength={6}
-                        {...register('password')}
-                      />
-                      <button type='button' onClick={handleChangePasswordVisibity}>
-                        {
-                          isPasswordVisible
-                            ? <Eye size={32} />
-                            : <EyeClosed size={32} />
-                        }
-                      </button>
-                    </InputPassword>
-                  </div>
-                  <button type="submit">
-                    <CheckCircle size={32} />
-                  </button>
-                </LogInContainer>
-              </form>
-
-              <DividerContainer>
-                <hr/>
-                <span>ou</span>
-                <hr/>
-              </DividerContainer>
-
-              <button type="button">
-                  Criar Nova Palestra
+              <button type="submit">
+                <CheckCircle size={32} />
               </button>
-            </ContentContainer>
-          </Content>
-        </Dialog.Portal>
-      </Dialog.Root>
+            </LogInContainer>
+          </form>
+
+          <DividerContainer>
+            <hr/>
+            <span>ou</span>
+            <hr/>
+          </DividerContainer>
+
+          <button type="button">
+            Nova Sala
+          </button>
+        </ContentContainer>
+      </ModalDefault>
     </Container>
   )
 }
