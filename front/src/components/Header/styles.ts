@@ -1,5 +1,4 @@
-import * as Dialog from '@radix-ui/react-dialog'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Container = styled.header`
   background-color: ${(props) => props.theme['blue-900']};
@@ -7,44 +6,6 @@ export const Container = styled.header`
   justify-content: center;
   height: 8rem;
   align-items: center;
-`
-
-export const Overlay = styled(Dialog.Overlay)`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.75);
-`
-
-export const ButtonCloseModal = styled(Dialog.Close)`
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  line-height: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: 0.4s;
-  color: ${(props) => props.theme['gray-100']};
-
-  &:hover{
-    color: ${(props) => props.theme['gray-900']};
-  }
-`
-
-export const Content = styled(Dialog.Content)`
-  min-width: 33rem;
-  border-radius: 6px;
-  padding: 1.5rem 1.5rem 3rem 1.5rem;
-  background-color: ${(props) => props.theme.orange};
-
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 `
 
 export const ContentContainer = styled.div`
@@ -78,66 +39,6 @@ export const ContentContainer = styled.div`
     background-color: ${(props) => props.theme['blue-600']};
     color: ${(props) => props.theme['gray-100']};
     transition: 0.4s;
-  }
-`
-
-interface IInputPassword {
-  hasError: boolean
-}
-
-export const InputPassword = styled.div<IInputPassword>`
-  position: relative;
-  display: flex;
-  align-items: center;
-
-  label{
-    display: block;
-  }
-
-  input{
-    width: 15rem;
-    height: 3.375rem;
-    border: none;
-    padding: 0.8rem;
-    border-radius: 6px 0px 0px 6px;
-    background-color: ${(props) => props.theme['gray-100']};
-    color: ${(props) => props.theme['blue-900']};
-    letter-spacing: 1rem;
-    font-weight: 600;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    font-family: monospace;
-
-    ${({ hasError }) =>
-    hasError ?
-      css`background-color: ${(props) => props.theme['red-100']};
-          border: 1px solid ${(props) => props.theme['red-600']}`
-      :
-      css`background-color: ${(props) => props.theme['gray-100']};
-          border: 1px solid ${(props) => props.theme['orange-200']}`
-}
-  }
-
-  input::placeholder{
-    letter-spacing: 0rem;
-    text-transform: none;
-    font-size: 1rem;
-    font-weight: 400;
-    font-family: 'Roboto',sans-serif;
-  }
-
-  button{
-    border: none;
-    background: none;
-    position: absolute;
-    right: 0.5rem;
-    color: ${(props) => props.theme['gray-200']};
-    cursor: pointer;
-    transition: 0.4s;
-  }
-
-  button:hover{
-    color: ${(props) => props.theme['gray-900']};
   }
 `
 

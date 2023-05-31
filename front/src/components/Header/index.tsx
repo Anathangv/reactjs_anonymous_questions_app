@@ -1,12 +1,11 @@
-import { ButtonCloseModal, Container, Content, ContentContainer, DividerContainer, InputPassword, LogInContainer, Overlay } from './styles'
-import * as Dialog from '@radix-ui/react-dialog'
-import { useForm } from 'react-hook-form'
 import * as zod from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { CheckCircle, Eye, EyeClosed, X } from '@phosphor-icons/react'
 import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { CheckCircle }  from '@phosphor-icons/react'
 import { ModalDefault } from '../ModalDefault'
-import { InputPassword_ } from '../InputPassword'
+import { InputPassword } from '../InputPassword'
+import { Container, ContentContainer, DividerContainer, LogInContainer } from './styles'
 /*
 TODO
  - partial border, upper part with orange color
@@ -51,7 +50,7 @@ export function Header(){
           <form onSubmit={handleSubmit(handleLogin)} action=''>
 
             <LogInContainer>
-              <InputPassword_
+              <InputPassword
                 hasError={!!formState.errors.password}
                 isPasswordVisible={isPasswordVisible}
                 label='Entrar'

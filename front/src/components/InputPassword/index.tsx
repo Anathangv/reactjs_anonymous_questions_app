@@ -10,7 +10,7 @@ type IInputPassword = InputHTMLAttributes<HTMLInputElement> & {
 }
 
 /* eslint-disable react/display-name */
-export const InputPassword_ = forwardRef<
+export const InputPassword = forwardRef<
   HTMLInputElement,
   IInputPassword
 >(({ label, hasError, isPasswordVisible, changePassordVisibity, ...props }, ref) => {

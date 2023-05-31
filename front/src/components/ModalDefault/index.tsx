@@ -1,6 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog'
-import { ButtonCloseModal, Content, Overlay } from './styles'
 import { X } from '@phosphor-icons/react'
+import { ButtonCloseModal, Content, Overlay } from './styles'
 
 interface IModalDefaultProps {
   isOpen: boolean
