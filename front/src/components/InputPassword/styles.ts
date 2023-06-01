@@ -5,8 +5,8 @@ interface IInputPassword {
 }
 
 export const InputPasswordContainer = styled.div<IInputPassword>`
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
+  /* flex-direction: column; */
 
   label{
     margin-bottom: 0.2rem;

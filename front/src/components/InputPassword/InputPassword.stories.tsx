@@ -1,12 +1,12 @@
 import { ThemeProvider } from 'styled-components'
-import { Header } from '.'
+import { IInputPassword, InputPassword } from './index'
 import { defaultTheme } from '../../styles/themes/default'
 import { GlobalStyle } from '../../styles/global'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default{
-  title: 'Components/Header',
-  component: Header,
+  title: 'Components/InputPassword',
+  component: InputPassword,
   decorators: [
     (Story) => {
       return (
@@ -17,6 +17,12 @@ export default{
       )
     }
   ]
-} as Meta
+} as Meta<IInputPassword>
 
-export const Default: StoryObj = {}
+export const Default:StoryObj<IInputPassword> = {
+  args: {
+    label: 'Entrar',
+    isPasswordVisible: false,
+    hasError: false
+  }
+}

@@ -1,12 +1,12 @@
 import { ThemeProvider } from 'styled-components'
-import { Header } from '.'
+import { IModalDefaultProps, ModalDefault } from './index'
 import { defaultTheme } from '../../styles/themes/default'
 import { GlobalStyle } from '../../styles/global'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default{
-  title: 'Components/Header',
-  component: Header,
+  title: 'Components/ModalDefault',
+  component: ModalDefault,
   decorators: [
     (Story) => {
       return (
@@ -17,6 +17,13 @@ export default{
       )
     }
   ]
-} as Meta
+} as Meta<IModalDefaultProps>
 
-export const Default: StoryObj = {}
+export const Default:StoryObj<IModalDefaultProps> = {
+  args: {
+    isOpen: true,
+    hasCloseModalOption: true,
+    title: 'Test Modal Title',
+    children: <div><span>{'modal content is placed here'}</span></div>
+  }
+}

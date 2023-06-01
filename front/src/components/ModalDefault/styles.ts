@@ -32,7 +32,7 @@ export const Content = styled(Dialog.Content)`
   background-color: ${(props) => props.theme.orange};
 
   position: fixed;
-  top: 30%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 `

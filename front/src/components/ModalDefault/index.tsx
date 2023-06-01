@@ -2,7 +2,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { X } from '@phosphor-icons/react'
 import { ButtonCloseModal, Content, Overlay } from './styles'
 
-interface IModalDefaultProps {
+export interface IModalDefaultProps {
   isOpen: boolean
   title: string
   hasCloseModalOption: boolean

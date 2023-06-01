@@ -2,7 +2,7 @@ import { Eye, EyeClosed } from '@phosphor-icons/react'
 import { InputHTMLAttributes, forwardRef } from 'react'
 import { InputPasswordContainer } from './styles'
 
-type IInputPassword = InputHTMLAttributes<HTMLInputElement> & {
+export type IInputPassword = InputHTMLAttributes<HTMLInputElement> & {
   label: string,
   isPasswordVisible: boolean,
   hasError: boolean,
