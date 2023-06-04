@@ -26,7 +26,8 @@ export const ButtonCloseModal = styled(Dialog.Close)`
   }
 `
 export const Content = styled(Dialog.Content)`
-  min-width: 33rem;
+  width: 100%;
+  max-width: 54rem;
   border-radius: 6px;
   padding: 1.5rem 1.5rem 3rem 1.5rem;
   background-color: ${(props) => props.theme.orange};

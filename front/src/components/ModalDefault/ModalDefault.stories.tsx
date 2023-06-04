@@ -22,7 +22,6 @@ export default{
 export const Default:StoryObj<IModalDefaultProps> = {
   args: {
     isOpen: true,
-    hasCloseModalOption: true,
     title: 'Test Modal Title',
     children: <div><span>{'modal content is placed here'}</span></div>
   }
