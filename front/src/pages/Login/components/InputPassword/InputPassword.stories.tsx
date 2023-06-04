@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components'
 import { IInputPassword, InputPassword } from './index'
-import { defaultTheme } from '../../styles/themes/default'
-import { GlobalStyle } from '../../styles/global'
+import { defaultTheme } from '../../../../styles/themes/default'
+import { GlobalStyle } from '../../../../styles/global'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default{

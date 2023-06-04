@@ -5,14 +5,12 @@ import { ButtonCloseModal, Content, Overlay } from './styles'
 export interface IModalDefaultProps {
   isOpen: boolean
   title: string
-  hasCloseModalOption: boolean
   children: React.ReactNode
 }
 
 export function ModalDefault({
   isOpen,
   title,
-  hasCloseModalOption,
   children }: IModalDefaultProps){
 
   return(
@@ -23,12 +21,9 @@ export function ModalDefault({
         <Content>
           <Dialog.Title>{title}</Dialog.Title>
 
-          {
-            hasCloseModalOption &&
           <ButtonCloseModal asChild>
             <X />
           </ButtonCloseModal>
-          }
 
           <>
             {children}

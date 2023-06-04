@@ -2,6 +2,11 @@ import { Eye, EyeClosed } from '@phosphor-icons/react'
 import { InputHTMLAttributes, forwardRef } from 'react'
 import { InputPasswordContainer } from './styles'
 
+/*
+TODO:
+- auto focos in the field when change the visibility or submit error
+*/
+
 export type IInputPassword = InputHTMLAttributes<HTMLInputElement> & {
   label: string,
   isPasswordVisible: boolean,

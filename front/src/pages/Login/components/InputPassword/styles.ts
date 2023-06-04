@@ -6,7 +6,6 @@ interface IInputPassword {
 
 export const InputPasswordContainer = styled.div<IInputPassword>`
   display: inline-block;
-  /* flex-direction: column; */
 
   label{
     margin-bottom: 0.2rem;
@@ -50,6 +49,10 @@ export const InputPasswordContainer = styled.div<IInputPassword>`
       font-size: 1rem;
       font-weight: 400;
       font-family: 'Roboto',sans-serif;
+    }
+
+    input:focus::placeholder{
+      color: transparent;
     }
 
     button{
