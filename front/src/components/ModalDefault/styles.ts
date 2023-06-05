@@ -29,7 +29,7 @@ export const Content = styled(Dialog.Content)`
   width: 100%;
   max-width: 54rem;
   border-radius: 6px;
-  padding: 1.5rem 1.5rem 3rem 1.5rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   background-color: ${(props) => props.theme.orange};
 
   position: fixed;

@@ -2,9 +2,11 @@ import * as zod from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ModalDefault } from '../../../../components/ModalDefault'
-import { FormCreateEdit } from './styles'
+import { FormCreateEdit, SaveContainer, TopicContainer } from './styles'
 import { InputText } from '../InputText'
 import { InputTextWithActions } from '../InputTextWithActions'
+import { PlusSquare } from '@phosphor-icons/react'
+import { ButtonBorder } from '../../../../components/ButtonBorder'
 
 const loginFormDataSchema = zod.object({
   password: zod.string().min(6, { message: 'Necessário informar campo com 6 digitos' }).max(6)
@@ -34,18 +36,29 @@ export function CreateEditPresentationModal(){
           label='Titulo do Evento'
           hasError={false}/>
 
-        <div>
+        <TopicContainer>
           <label>
-              Tema(s)
+            Tema(s)
           </label>
-          <InputTextWithActions
-            hasError={false}/>
-          <InputTextWithActions
-            hasError={false}/>
-          <InputTextWithActions
-            hasError={false}/>
-        </div>
+          <div>
+            <InputTextWithActions
+              hasError={false}/>
+            <InputTextWithActions
+              hasError={false}/>
+            <InputTextWithActions
+              hasError={false}/>
+          </div>
 
+          <div>
+            <button>
+              <PlusSquare size={64}/>
+            </button>
+          </div>
+        </TopicContainer>
+
+        <SaveContainer>
+          <ButtonBorder label='SALVAR' />
+        </SaveContainer>
       </FormCreateEdit>
     </ModalDefault>
   )

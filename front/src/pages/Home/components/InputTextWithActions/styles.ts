@@ -5,6 +5,10 @@ export const InputTextContainer = styled.div`
   display: flex;
   flex-direction: column;
 
+  label{
+    margin-bottom: 5rem;
+  }
+
   > div{
     position: relative;
     display: flex;
@@ -12,9 +16,6 @@ export const InputTextContainer = styled.div`
     align-items: center;
     width: 100%;
 
-    label{
-      margin-bottom: 0.3rem;
-    }
 
     input[type='text']{
       width: 100%;

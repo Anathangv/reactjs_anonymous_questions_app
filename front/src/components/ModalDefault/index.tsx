@@ -25,9 +25,7 @@ export function ModalDefault({
             <X />
           </ButtonCloseModal>
 
-          <>
-            {children}
-          </>
+          {children}
         </Content>
       </Dialog.Portal>
     </Dialog.Root>

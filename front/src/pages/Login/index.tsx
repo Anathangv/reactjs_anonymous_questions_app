@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { InputPassword } from './components/InputPassword'
 import { DividerContainer, InputPasswordContainer, LoginContainer } from './styles'
 import { useState } from 'react'
+import { ButtonBorder } from '../../components/ButtonBorder'
 
 const loginFormDataSchema = zod.object({
   password: zod.string().min(6, { message: 'Necessário informar campo com 6 digitos' }).max(6)
@@ -58,9 +59,7 @@ export function Login(){
           <hr/>
         </DividerContainer>
 
-        <button type="button">
-            Nova Sala
-        </button>
+        <ButtonBorder label='Nova Sala' />
       </div>
     </LoginContainer>
   )
